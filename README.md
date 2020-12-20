@@ -1,6 +1,6 @@
 # Colect ES COVID data
 
-A crawler made by @marcellalcs and @arielwb with Puppeteer to daily colect COVID19 data from https://coronavirus.es.gov.br/painel-covid-19-es. The output is a csv file.
+A crawler made by @marcellalcs and [@arielwb](https://github.com/arielwb) with Puppeteer to daily colect COVID19 data from https://coronavirus.es.gov.br/painel-covid-19-es. The output is a csv file.
 
 ## Installation
 
