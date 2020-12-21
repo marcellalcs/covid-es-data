@@ -13,7 +13,7 @@ yarn install
 ## Usage
 
 ```bash
-node colect-data.js
+yarn colect-data
 ```
 
 ## Contributing
