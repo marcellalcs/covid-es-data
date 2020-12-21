@@ -7,5 +7,8 @@
     "csv-writer": "^1.6.0",
     "fast-csv": "^4.3.6",
     "puppeteer": "^5.5.0"
+  },
+  "scripts": {
+    "colect-data": "node colect-data.js"
   }
 }
