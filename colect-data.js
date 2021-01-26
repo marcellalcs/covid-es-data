@@ -105,6 +105,6 @@ let scrape = async () => {
 scrape().then((value) => {
   var today = new Date().toLocaleDateString().split("/").join("-")
 
-  fs.writeFileSync(`${today}-ES.csv`, value);
+  fs.writeFileSync(`csv/${today}-ES.csv`, value);
   console.log(value)
 })
