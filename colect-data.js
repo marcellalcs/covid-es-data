@@ -29,7 +29,7 @@ let scrape = async () => {
   const result = await page.evaluate(() => {
     const createCsv = (data) => data
       .map((row) => `${row
-        .map((cell) => `"${cell.replace(".", "")}"`)
+        .map((cell) => `"${cell.replace(",", "")}"`)
         .join(',')}\n`)
       .join('');
 
@@ -69,14 +69,14 @@ let scrape = async () => {
 
         if (body.scrollTop + scrollHeightToShowMore > body.scrollHeight) {
           clearInterval(scrollTimer);
-          const totalDashboardCases = parseInt(finalData[1][1].replace(".", ""))
-          const totalDashboardDeaths = parseInt(finalData[1][2].replace(".", ""))
+          const totalDashboardCases = parseInt(finalData[1][1].replace(",", ""))
+          const totalDashboardDeaths = parseInt(finalData[1][2].replace(",", ""))
 
-          const mapedCases = finalData.map((x) => x[1]).map((x) => x.replace(".","")).map(x => parseInt(x))
+          const mapedCases = finalData.map((x) => x[1]).map((x) => x.replace(",","")).map(x => parseInt(x))
           mapedCases.shift()
           mapedCases.shift()
           mapedCases.shift()
-          const mapedDeath = finalData.map((x) => x[2]).map((x) => x.replace(".","")).map(x => parseInt(x))
+          const mapedDeath = finalData.map((x) => x[2]).map((x) => x.replace(",","")).map(x => parseInt(x))
           mapedDeath.shift()
           mapedDeath.shift()
           mapedDeath.shift()
