@@ -16,6 +16,10 @@ yarn install
 yarn colect-data
 ```
 
+### Daily publish
+
+Every day at 6h15 PM, data is collected and published at https://colect-covid-es.netlify.app
+
 ## Contributing
 Pull requests are welcome. Or if you're not in the mood to code, please open an issue ;)
 
