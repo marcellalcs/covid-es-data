@@ -13,11 +13,12 @@
     <body>
       <h1>Dados COVID ES</h1>
 
-      <p>Dados coletados hoje</p>
+      
       <script>
         var today = new Date().toLocaleDateString().split("/").join("-")
+        document.body.innerHTML += `<p>Dados coletados: ${today}</p>`
         var url = `${today}-ES.csv`
-        document.body.innerHTML += `<a href=${url} download='dados'>Download CSV</a>`;
+        document.body.innerHTML += `<a href=${url} download='dados-${url}'>Download CSV</a>`;
       </script>
       
     </body>
