@@ -16,7 +16,7 @@
       <p>Dados coletados hoje</p>
       <script>
         var today = new Date().toLocaleDateString().split("/").join("-")
-        var url = `csv/${today}`
+        var url = `${today}-ES.csv`
         document.body.innerHTML += `<a href=${url} download='dados'>Download CSV</a>`;
       </script>
       
