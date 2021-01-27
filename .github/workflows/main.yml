@@ -1,10 +1,13 @@
 # .github/workflows/main.yml
 
 name: Trigger Netlify Build
+uses: zcong1993/setup-timezone@master
+with:
+    timezone: Asia/Shanghai
 on:
   schedule:
     # Run at 0815 daily
-    - cron: '15 18 * * *'
+    - cron: '15 21 * * *'
 jobs:
   build:
     name: Request Netlify Webhook
