@@ -107,4 +107,27 @@ scrape().then((value) => {
 
   fs.writeFileSync(`csv/${today}-ES.csv`, value);
   console.log(value)
+
+  var html = `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>Dados COVID</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Dados COVID ES</h1>
+
+      <p>Dados coletados: ${Date()}</p>
+      <a href="csv/${today}-ES.csv" download='dados-${today}'>Download CSV</a>
+      
+    </body>
+  </html>`
+
+  fs.writeFileSync("csv/index.html", html)
 })
