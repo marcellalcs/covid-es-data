@@ -124,7 +124,7 @@ scrape().then((value) => {
       <h1>Dados COVID ES</h1>
 
       <p>Dados coletados: ${Date()}</p>
-      <a href="csv/${today}-ES.csv" download='dados-${today}'>Download CSV</a>
+      <a href="${today}-ES.csv" download='dados-${today}'>Download CSV</a>
       
     </body>
   </html>`
