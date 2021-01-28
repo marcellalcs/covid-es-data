@@ -1,7 +1,6 @@
 # .github/workflows/main.yml
 
 name: Trigger Netlify Build
-uses: zcong1993/setup-timezone@master
 with:
     timezone: Asia/Shanghai
 on:
