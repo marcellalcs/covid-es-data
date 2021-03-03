@@ -36,8 +36,8 @@ let scrape = async () => {
     const body = document.querySelectorAll('.bodyCells')[1]
 
     const generalData = document.querySelectorAll('.value')
-    const totalCases = generalData[4].textContent
-    const totalDeath = generalData[5].textContent
+    const totalCases = generalData[5].textContent
+    const totalDeath = generalData[6].textContent
 
     const finalData = [
       ['municipio', 'confirmados', 'mortes'],
