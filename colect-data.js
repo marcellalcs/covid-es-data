@@ -2,9 +2,7 @@ const puppeteer = require('puppeteer')
 const fs = require('fs')
 
 let scrape = async () => {
-  const browser = await puppeteer.launch({
-    headless: true
-  });
+  const browser = await puppeteer.launch({headless: true});
   const page = await browser.newPage()
 
   await page.goto('https://coronavirus.es.gov.br/painel-covid-19-es')
@@ -16,12 +14,12 @@ let scrape = async () => {
   const covidPannelUrl = await page.evaluate(() =>
     document.querySelectorAll('.iframe-painel-covid')[0].getAttribute('src')
   )
-
+  console.log(covidPannelUrl)
   await page.goto(covidPannelUrl)
   await page.waitForTimeout(10000)
 
   await page.evaluate(() => {
-    button = document.querySelectorAll('.pivotTableCellNoWrap.cell-interactive.tablixAlignLeft')[1]
+    button = document.querySelectorAll('.pivotTableCellNoWrap.cell-interactive.tablixAlignLeft')[0]
     button.click();
 
   });
@@ -33,11 +31,11 @@ let scrape = async () => {
         .join(',')}\n`)
       .join('');
 
-    const body = document.querySelectorAll('.bodyCells')[1]
+    const body = document.querySelectorAll('.bodyCells')[0]
 
     const generalData = document.querySelectorAll('.value')
-    const totalCases = generalData[5].textContent
-    const totalDeath = generalData[6].textContent
+    const totalCases = generalData[0].textContent
+    const totalDeath = generalData[1].textContent
 
     const finalData = [
       ['municipio', 'confirmados', 'mortes'],
