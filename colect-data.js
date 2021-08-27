@@ -35,7 +35,7 @@ let scrape = async () => {
 
     const generalData = document.querySelectorAll('.value')
     const totalCases = generalData[0].textContent
-    const totalDeath = generalData[1].textContent
+    const totalDeath = generalData[7].textContent
 
     const finalData = [
       ['municipio', 'confirmados', 'mortes'],
@@ -58,7 +58,7 @@ let scrape = async () => {
         for (let rowIndex = 0; rowIndex < totalRows; rowIndex++) {
           let newRow = []
           for (let colIndex = 1; colIndex < totalColumns; colIndex++) { //starts on 1, to not colect id
-            if(colIndex != 5 && colIndex !=2) { // do not colect populacao and letal
+            if(colIndex == 1 || colIndex == 3 || colIndex == 4) { // do not colect populacao and letal
               newRow.push(data[colIndex][rowIndex])
             }
           }
@@ -122,7 +122,7 @@ scrape().then((value) => {
       <h1>Dados COVID ES</h1>
 
       <p>Dados coletados: ${Date()}</p>
-      <a href="${today}-ES.csv" download='dados-${today}'>Download CSV</a>
+      <a href="${today.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}-ES.csv" download='dados-${today.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}'>Download CSV</a>
       
     </body>
   </html>`
