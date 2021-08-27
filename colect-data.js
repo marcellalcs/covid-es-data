@@ -101,7 +101,7 @@ let scrape = async () => {
 };
 
 scrape().then((value) => {
-  var today = new Date().toLocaleDateString().split("/").join("-")
+  var today = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }).split("/").join("-")
 
   fs.writeFileSync(`csv/${today}-ES.csv`, value);
   console.log(value)
@@ -121,8 +121,8 @@ scrape().then((value) => {
     <body>
       <h1>Dados COVID ES</h1>
 
-      <p>Dados coletados: ${Date()}</p>
-      <a href="${today.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}-ES.csv" download='dados-${today.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}'>Download CSV</a>
+      <p>Dados coletados: ${new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}</p>
+      <a href="${today}-ES.csv" download='dados-${today}'>Download CSV</a>
       
     </body>
   </html>`
